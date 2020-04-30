@@ -3,7 +3,7 @@ appendValues({
   spreadsheetId: '1C0lBZU03Nroa4onq1de4_1E_mUCZKDE3xEpZHKc5ppA',
   range: 'FCS-Survey!A1:T1',
   values: (state) => {
-    console.log(state.data);
+    console.log('Submission data: ' + JSON.stringify(state.data, null, 2));
     const kobo = state.data;
     return [
       [
