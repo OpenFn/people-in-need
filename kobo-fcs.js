@@ -1,17 +1,16 @@
 //Job to integrate Kobo FCS form
 appendValues({
   spreadsheetId: '1C0lBZU03Nroa4onq1de4_1E_mUCZKDE3xEpZHKc5ppA',
-  range: 'FCS-Survey!A1:T1',
+  range: 'FCS-Survey!A1',
   values: (state) => {
     console.log('Submission data: ' + JSON.stringify(state.data, null, 2));
-    const kobo = state.data;
+    const kobo = state.data.body;
     return [
       [
-        // kobo.start,
         kobo.end,
         kobo.username,
-        kobo.q0_fcs_description,
-        kobo.q0_fcs_general,
+        kobo.calc_fcs,
+        kobo.calc_fcs_prof,
         kobo.q1_fcs,
         kobo.q2_fcs,
         kobo.q3_fcs,
@@ -31,11 +30,6 @@ appendValues({
         // kobo.calc_fg1,
         // kobo.calc_fg2,
         // kobo.calc_fg5,
-        kobo.calc_fcs,
-        kobo.calc_fcs_prof,
-        kobo.out1_fg_sum,
-        kobo.out2_fcs_summary,
-        // kobo.__version__,
       ],
     ];
   },
