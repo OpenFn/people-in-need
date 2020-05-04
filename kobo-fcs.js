@@ -1,7 +1,7 @@
 //Job to integrate Kobo FCS form
 appendValues({
   spreadsheetId: '1C0lBZU03Nroa4onq1de4_1E_mUCZKDE3xEpZHKc5ppA',
-  range: 'FCS-Survey!A1',
+  range: 'FCS-Survey!A2',
   values: (state) => {
     console.log('Submission data: ' + JSON.stringify(state.data, null, 2));
     const kobo = state.data.body;
