@@ -39,7 +39,7 @@ appendValues({
 // NOTE: This is what the job SHOULD look like, given a form with a repeat group
 // appendValues({
 //   spreadsheetId: '1C0lBZU03Nroa4onq1de4_1E_mUCZKDE3xEpZHKc5ppA',
-//   range: 'FCS-IDDS-FNS-IDDS-Survey-Chilren!A1:T1',
+//   range: 'FNS-IDDS-Survey-Children!A1:T1',
 //   values: (state) => {
 //     const kobo = state.data.body;
 //     // TODO: talk about how repeat groups work in Kobo.
@@ -59,7 +59,7 @@ appendValues({
 // NOTE: This isn't great, but if we don't have a repeat group we'll need to hard code it.
 appendValues({
   spreadsheetId: '1C0lBZU03Nroa4onq1de4_1E_mUCZKDE3xEpZHKc5ppA',
-  range: 'FCS-IDDS-FNS-IDDS-Survey-Chilren!A1:T1',
+  range: 'FNS-IDDS-Survey-Children!A1',
   values: (state) => {
     const kobo = state.data.body;
     return [
