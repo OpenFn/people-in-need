@@ -1,8 +1,3 @@
-alterState(state => {
-  console.log(state);
-  return state;
-});
-
 //Job to integrate Kobo FCS form
 appendValues({
   spreadsheetId: '1C0lBZU03Nroa4onq1de4_1E_mUCZKDE3xEpZHKc5ppA',
