@@ -36,21 +36,73 @@ appendValues({
   },
 });
 
+// NOTE: This is what the job SHOULD look like, given a form with a repeat group
+// appendValues({
+//   spreadsheetId: '1C0lBZU03Nroa4onq1de4_1E_mUCZKDE3xEpZHKc5ppA',
+//   range: 'FCS-IDDS-FNS-IDDS-Survey-Chilren!A1:T1',
+//   values: (state) => {
+//     const kobo = state.data.body;
+//     // TODO: talk about how repeat groups work in Kobo.
+//     return state.data.children.map((child) => {
+//       console.log(child);
+//       return [
+//         kobo.end,
+//         kobo.deviceid,
+//         kobo.child1_name,
+//         kobo.child1_sex,
+//         kobo.child1_age,
+//       ];
+//     });
+//   },
+// });
+
+// NOTE: This isn't great, but if we don't have a repeat group we'll need to hard code it.
 appendValues({
   spreadsheetId: '1C0lBZU03Nroa4onq1de4_1E_mUCZKDE3xEpZHKc5ppA',
   range: 'FCS-IDDS-FNS-IDDS-Survey-Chilren!A1:T1',
   values: (state) => {
     const kobo = state.data.body;
-    // TODO: talk about how repeat groups work in Kobo.
-    return state.data.children.map((child) => {
-      console.log(child);
-      return [
+    return [
+      [
         kobo.end,
         kobo.deviceid,
-        kobo.child1_name,
+        kobo.child1,
         kobo.child1_sex,
+        kobo.child1_name,
         kobo.child1_age,
-      ];
-    });
+      ],
+      [
+        kobo.end,
+        kobo.deviceid,
+        kobo.child2,
+        kobo.child2_sex,
+        kobo.child2_name,
+        kobo.child2_age,
+      ],
+      [
+        kobo.end,
+        kobo.deviceid,
+        kobo.child3,
+        kobo.child3_sex,
+        kobo.child3_name,
+        kobo.child3_age,
+      ],
+      [
+        kobo.end,
+        kobo.deviceid,
+        kobo.child4,
+        kobo.child4_sex,
+        kobo.child4_name,
+        kobo.child4_age,
+      ],
+      [
+        kobo.end,
+        kobo.deviceid,
+        kobo.child5,
+        kobo.child5_sex,
+        kobo.child5_name,
+        kobo.child5_age,
+      ],
+    ];
   },
 });
