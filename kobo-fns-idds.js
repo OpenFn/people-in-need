@@ -1,4 +1,5 @@
 //Job to integrate Kobo FNS-IDDS demo form
+//Table #1: Add rows to register households
 appendValues({
   spreadsheetId: '1C0lBZU03Nroa4onq1de4_1E_mUCZKDE3xEpZHKc5ppA',
   range: 'FNS-IDDS-Survey!A2',
@@ -13,12 +14,13 @@ appendValues({
     const kobo = state.data.body;
     return [
       [
+        kobo['meta/instanceID'],
         kobo.end,
         kobo.deviceid,
-        kobo.respondent_name,
-        kobo.respondent_age,
-        kobo.hh_number,
-        kobo.hh_member_children,
+        kobo['resp_info/respondent_name'],
+        kobo['resp_info/respondent_age'],
+        kobo['hh_info/hh_number'],
+        kobo['hh_info/hh_member_children'],
         bfMap[kobo.bf_practices], //Re-label this response; see line 6
         kobo['youngest_child6-23'],
         kobo['youngest_child6-23_sex'],
@@ -42,7 +44,7 @@ appendValues({
   },
 });
 
-// NOTE: We can either hardcode as below, or also support repeat groups (if that's implemented in Kobo)
+//Table #2: Add rows to register children as individual records
 appendValues({
   spreadsheetId: '1C0lBZU03Nroa4onq1de4_1E_mUCZKDE3xEpZHKc5ppA',
   range: 'FNS-IDDS-Survey-Children!A2',
@@ -53,37 +55,37 @@ appendValues({
     };
     const kobo = state.data.body;
     return [
-      kobo['child1/child1_name'] && [
-        kobo.end,
-        kobo.deviceid,
+      kobo['meta/instanceID'],
+      kobo['child1/child1_name'] && [ //concatenate child_name && meta/instanceId, to create new child Id
+        kobo['meta/instanceID'],
         sexes[kobo['child1/child1_sex']],
         kobo['child1/child1_name'],
         kobo['child1/child1_age'],
       ],
-      kobo['child2/child2_name'] && [
-        kobo.end,
-        kobo.deviceid,
+      kobo['meta/instanceID'],
+      kobo['child1/child2_name'] && [ 
+        kobo['meta/instanceID'],
         sexes[kobo['child2/child2_sex']],
         kobo['child2/child2_name'],
         kobo['child2/child2_age'],
       ],
-      kobo['child3/child3_name'] && [
-        kobo.end,
-        kobo.deviceid,
+      kobo['meta/instanceID'],
+      kobo['child1/child3_name'] && [ 
+        kobo['meta/instanceID'],
         sexes[kobo['child3/child3_sex']],
         kobo['child3/child3_name'],
         kobo['child3/child3_age'],
       ],
-      kobo['child4/child4_name'] && [
-        kobo.end,
-        kobo.deviceid,
+      kobo['meta/instanceID'],
+      kobo['child1/child4_name'] && [ 
+        kobo['meta/instanceID'],
         sexes[kobo['child4/child4_sex']],
         kobo['child4/child4_name'],
         kobo['child4/child4_age'],
       ],
-      kobo['child5/child5_name'] && [
-        kobo.end,
-        kobo.deviceid,
+      kobo['meta/instanceID'],
+      kobo['child1/child5_name'] && [ 
+        kobo['meta/instanceID'],
         sexes[kobo['child5/child5_sex']],
         kobo['child5/child5_name'],
         kobo['child5/child5_age'],
