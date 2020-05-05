@@ -3,6 +3,13 @@ appendValues({
   spreadsheetId: '1C0lBZU03Nroa4onq1de4_1E_mUCZKDE3xEpZHKc5ppA',
   range: 'FNS-IDDS-Survey!A2',
   values: (state) => {
+    const bfMap = {
+      '1': 'nothing',
+      '2': 'only breastmilk',
+      '3': 'breastmilk and other food/ drink',
+      '4': 'no breastmilk, only other food/ drink',
+    };
+
     const kobo = state.data.body;
     return [
       [
@@ -12,7 +19,7 @@ appendValues({
         kobo.respondent_age,
         kobo.hh_number,
         kobo.hh_member_children,
-        kobo.bf_practices,
+        bfMap[bf_practices],
         kobo['youngest_child6-23'],
         kobo['youngest_child6-23_sex'],
         kobo.breast_fed,
