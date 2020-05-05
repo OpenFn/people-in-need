@@ -3,7 +3,7 @@ appendValues({
   spreadsheetId: '1C0lBZU03Nroa4onq1de4_1E_mUCZKDE3xEpZHKc5ppA',
   range: 'FNS-IDDS-Survey!A2',
   values: (state) => {
-    const bfMap = {
+    const bfMap = {  //Re-label responses to "Breastfeeding practices"
       '1': 'nothing',
       '2': 'only breastmilk',
       '3': 'breastmilk and other food/ drink',
@@ -19,7 +19,7 @@ appendValues({
         kobo.respondent_age,
         kobo.hh_number,
         kobo.hh_member_children,
-        bfMap[kobo.bf_practices],
+        bfMap[kobo.bf_practices], //Re-label this response; see line 6
         kobo['youngest_child6-23'],
         kobo['youngest_child6-23_sex'],
         kobo.breast_fed,
@@ -42,32 +42,12 @@ appendValues({
   },
 });
 
-// NOTE: This is what the job SHOULD look like, given a form with a repeat group
-// appendValues({
-//   spreadsheetId: '1C0lBZU03Nroa4onq1de4_1E_mUCZKDE3xEpZHKc5ppA',
-//   range: 'FNS-IDDS-Survey-Children!A2',
-//   values: (state) => {
-//     const kobo = state.data.body;
-//     // TODO: talk about how repeat groups work in Kobo.
-//     return state.data.children.map((child) => {
-//       console.log(child);
-//       return [
-//         kobo.end,
-//         kobo.deviceid,
-//         kobo['child1/child1_name,
-//         kobo['child1/child1_sex,
-//         kobo['child1/child1_age,
-//       ];
-//     });
-//   },
-// });
-
-// NOTE: This isn't great, but if we don't have a repeat group we'll need to hard code it.
+// NOTE: We can either hardcode as below, or also support repeat groups (if that's implemented in Kobo)
 appendValues({
   spreadsheetId: '1C0lBZU03Nroa4onq1de4_1E_mUCZKDE3xEpZHKc5ppA',
   range: 'FNS-IDDS-Survey-Children!A2',
   values: (state) => {
-    const sexes = {
+    const sexes = { //Another example of relabeling answers 
       '1': 'm',
       '2': 'f',
     };
