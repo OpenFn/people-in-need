@@ -7,6 +7,7 @@ appendValues({
     const kobo = state.data.body;
     return [
       [
+        kobo['meta/instanceID'],
         kobo.end.substring(0,9), //Only map date value, remove timeStamp
         kobo.username,
         kobo.calc_fcs,
@@ -27,7 +28,6 @@ appendValues({
         kobo.q14_fcs,
         kobo.q15_fcs,
         kobo.q16_fcs,
-        kobo.meta/instanceID
       ],
     ];
   },
