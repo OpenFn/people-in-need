@@ -9,7 +9,6 @@ appendValues({
       [
         kobo['meta/instanceID'],
         kobo.end.substring(0,9), //Only map date value, remove timeStamp
-        kobo.username,
         kobo.calc_fcs,
         kobo.calc_fcs_prof,
         kobo.q1_fcs,
