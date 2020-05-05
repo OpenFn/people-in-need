@@ -55,43 +55,44 @@ appendValues({
     };
     const kobo = state.data.body;
     return [
-      kobo['meta/instanceID'],
-      kobo['child1/child1_name'] &&  //concatenate child_name && meta/instanceId, to create new child Id
+      kobo['child1/child1_name'] && [
         kobo['meta/instanceID'],
-        sexes[kobo['child1/child1_sex']],
+        kobo.end,
         kobo['child1/child1_name'],
+        kobo['child1/child1_sex'],
+        sexes[kobo['child1/child1_sex']],
         kobo['child1/child1_age'],
       ],
-      [
-      kobo['meta/instanceID'],
-      kobo['child1/child2_name'] && 
-        kobo['meta/instanceID'],
-        sexes[kobo['child2/child2_sex']],
+      kobo['child2/child2_name'] && [
+         kobo['meta/instanceID'],
+        kobo.end,
         kobo['child2/child2_name'],
+        kobo['child2/child2_sex'],
+        sexes[kobo['child2/child2_sex']],
         kobo['child2/child2_age'],
       ],
-      [
-      kobo['meta/instanceID'],
-      kobo['child1/child3_name'] &&  
-        kobo['meta/instanceID'],
-        sexes[kobo['child3/child3_sex']],
+      kobo['child3/child3_name'] && [
+         kobo['meta/instanceID'],
+        kobo.end,
         kobo['child3/child3_name'],
+        kobo['child3/child3_sex'],
+        sexes[kobo['child3/child3_sex']],
         kobo['child3/child3_age'],
       ],
-      [
-      kobo['meta/instanceID'],
-      kobo['child1/child4_name'] &&  
+      kobo['child4/child4_name'] && [
         kobo['meta/instanceID'],
-        sexes[kobo['child4/child4_sex']],
+        kobo.end,
         kobo['child4/child4_name'],
+        kobo['child4/child4_sex'],
+        sexes[kobo['child4/child4_sex']],
         kobo['child4/child4_age'],
       ],
-      [
-      kobo['meta/instanceID'],
-      kobo['child1/child5_name'] && [ 
+      kobo['child5/child5_name'] && [
         kobo['meta/instanceID'],
-        sexes[kobo['child5/child5_sex']],
+        kobo.end,
         kobo['child5/child5_name'],
+        kobo['child5/child5_sex'],
+        sexes[kobo['child5/child5_sex']],
         kobo['child5/child5_age'],
       ],
     ];
