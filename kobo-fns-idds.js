@@ -19,7 +19,7 @@ appendValues({
         kobo.respondent_age,
         kobo.hh_number,
         kobo.hh_member_children,
-        bfMap[bf_practices],
+        bfMap[kobo.bf_practices],
         kobo['youngest_child6-23'],
         kobo['youngest_child6-23_sex'],
         kobo.breast_fed,
@@ -67,40 +67,44 @@ appendValues({
   spreadsheetId: '1C0lBZU03Nroa4onq1de4_1E_mUCZKDE3xEpZHKc5ppA',
   range: 'FNS-IDDS-Survey-Children!A2',
   values: (state) => {
+    const sexes = {
+      '1': 'm',
+      '2': 'f',
+    };
     const kobo = state.data.body;
     return [
       kobo['child1/child1_name'] && [
         kobo.end,
         kobo.deviceid,
-        kobo['child1/child1_sex'],
+        sexes[kobo['child1/child1_sex']],
         kobo['child1/child1_name'],
         kobo['child1/child1_age'],
       ],
       kobo['child2/child2_name'] && [
         kobo.end,
         kobo.deviceid,
-        kobo['child2/child2_sex'],
+        sexes[kobo['child2/child2_sex']],
         kobo['child2/child2_name'],
         kobo['child2/child2_age'],
       ],
       kobo['child3/child3_name'] && [
         kobo.end,
         kobo.deviceid,
-        kobo['child3/child3_sex'],
+        sexes[kobo['child3/child3_sex']],
         kobo['child3/child3_name'],
         kobo['child3/child3_age'],
       ],
       kobo['child4/child4_name'] && [
         kobo.end,
         kobo.deviceid,
-        kobo['child4/child4_sex'],
+        sexes[kobo['child4/child4_sex']],
         kobo['child4/child4_name'],
         kobo['child4/child4_age'],
       ],
       kobo['child5/child5_name'] && [
         kobo.end,
         kobo.deviceid,
-        kobo['child5/child5_sex'],
+        sexes[kobo['child5/child5_sex']],
         kobo['child5/child5_name'],
         kobo['child5/child5_age'],
       ],
