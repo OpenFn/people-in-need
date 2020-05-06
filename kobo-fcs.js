@@ -8,7 +8,7 @@ appendValues({
     return [
       [
         kobo['meta/instanceID'],
-        kobo.end.substring(0,10), //Only map date value, remove timeStamp
+        kobo.end,
         kobo.calc_fcs,
         kobo.calc_fcs_prof,
         kobo.q1_fcs,
