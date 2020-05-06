@@ -15,7 +15,7 @@ appendValues({
     return [
       [
         kobo['meta/instanceID'],
-        kobo.end,
+        kobo.end.substring(0,10), //Only map date value, remove timeStamp
         kobo.deviceid,
         kobo['resp_info/respondent_name'],
         kobo['resp_info/respondent_age'],
