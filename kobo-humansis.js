@@ -39,9 +39,23 @@ appendValues({
         'N/A', //not needed
         kobo['group_ba2su48/group_li4pp32/Head_of_household_ID_type'], //id card type
         kobo['group_ba2su48/group_li4pp32/Q_HHDEM_HEADIDNUMBER'], //id card number
-        //map kobo question to Col G,
-        //map kobo question to Col H
-        //Column I...  //if we have data transformation, we can write this in
+        'N/A',//map kobo question to Col G, or leave as 'N/A' or '' to show up blank
+        'N/A',//map kobo question to Col H
+        'N/A',//Column I...  //if we have data transformation, we can write this in
+        'N/A',//Column J
+        'N/A',//Column K
+        'N/A',//Column L
+        'N/A',//Column M
+        'N/A',//Column N
+        'N/A',//Column O
+        'N/A',//Column P
+        'N/A',//Column Q
+        'N/A',//Column R
+        'N/A',//Column S
+        'N/A',//Column T
+        'N/A',//Column U
+        '',//Column V - date of birth
+        '',//Column W - Vulnerability criteria
       ],
     ];
   },
