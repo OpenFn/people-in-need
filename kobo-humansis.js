@@ -54,8 +54,8 @@ appendValues({
         'N/A',//Column S
         'N/A',//Column T
         'N/A',//Column U
-        '',//Column V - date of birth
-        '',//Column W - Vulnerability criteria
+         kobo['group_ba2su48/group_ya5ls83/Q_HHDEM_HEADAGE'],//Column V - date of birth --> Calculate based on age
+        (kobo['group_ba2su48/group_li4pp32/group_du8vy30/Q_VUL_DISHH']=='HH_Disabled'? 'disabled' : 'not disabled'),//Column W - Vulnerability criteria
       ],
     ];
   },
