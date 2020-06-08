@@ -2,11 +2,13 @@ alterState((state) => {
   const kobo = state.data.body;
 
   // Estimate DOB for a respondent =============================================
-  state.estDOB = new Date().setFullYear(
-    new Date().getFullYear() -
-      parseInt(kobo['group_ba2su48/group_li4pp32/Q_HHDEM_HEADAGE'])
+  const eDOB = new Date(
+    new Date().setFullYear(
+      new Date().getFullYear() -
+        parseInt(kobo['group_ba2su48/group_li4pp32/Q_HHDEM_HEADAGE'])
+    )
   );
-  console.log(estDOB);
+  state.estDOB = eDOB.toISOString().substr(0, 10);
 
   // Clean and join vulnerabilities for use in a comma separated string. =======
   const vItems = [];
@@ -24,7 +26,7 @@ alterState((state) => {
 
   state.vulnerabilities = vItems.join(', ');
 
-  // Return this cleaned and prepared data for loading into Google sheets. ====
+  // Return this cleaned and prepared data for loading into Google sheets. =====
   return state;
 });
 
